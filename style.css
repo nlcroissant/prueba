@@ -1,0 +1,185 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	
+    font-family: 'MuseoModerno', cursive;  
+    background-color: #ffcac2;
+}
+
+/* configuración del encabezado con una imagen de fondo */
+
+header {
+	width: 100%;
+	height: 350px;
+	position: relative;
+	/* vamos a utlizar una imagen como fondo en el header y no en el HTML   */
+	background-image: url(./img/screen.jpg);
+	background-position: center center; /* centrada en coordenadas verticales y horizontales -- puedo desplazar right, left, button */
+	background-repeat: no-repeat;  /* no repite la imagen, por las dudas la imagen no llegue a cubrir el tamaño total del contenedor  */
+	background-attachment: fixed;  /*  el fondo queda fijo cuando hago el scroll de la página        */
+	
+
+}
+
+
+.placa1{
+    width: 100%;
+    height: 90px;
+    top: 150px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+} 
+
+
+.tituloPlaca{
+    font-size: 42px;
+    color: #fff;
+    margin: 20px 0 auto;
+} 
+
+
+
+
+/* barra de navegacion */
+nav{
+	width: 100%;
+	background-color: #900c3f;
+	color: white;
+	position: fixed;
+	z-index: 1000; /* indica el orden de un elemento, cuando varios elementos se superponen */
+}
+
+nav li{
+		
+		/*propiedad que permite que las viñetas se se mostren en linea y no una debajo de la otra */
+		display: inline-block;
+		/*sacamos el punto que esta delante de cada items en la lista */
+		list-style: none;
+		/* le damos un relleno */
+		padding: 5px;
+	
+
+}
+nav ul li a {
+  display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background: #fc9d9d;
+}
+
+
+/* sección principal */
+
+.cuerpo {
+    width: 90%;
+	padding: 15px 5px 0 5px;
+	margin: auto;
+	text-align: justify;
+}
+
+
+p {
+	margin: 16px 0;
+	line-height: 150%;
+}
+
+.listita{
+    padding-left: 30px;
+    list-style-type: circle ;
+}
+
+
+/* configuración de una sección en medio de la página con una imagen de fondo */
+
+.medio{
+    
+    width: 100%;
+    height: 350px;
+	background-color: transparent;
+	position: relative;
+	/* vamos a utlizar una imagen como fondo en el header y no en el HTML   */
+	background-image: url(img/person.jpg);
+	background-position: center center; /* centrada en coordenadas verticales y horizontales -- puedo desplazar right, left, button */
+	background-repeat: no-repeat;  /* no repite la imagen, por las dudas la imagen no llegue a cubrir el tamaño total del contenedor  */
+    background-attachment: fixed;  /*  el fondo queda fijo cuando hago el scroll de la página        */
+    margin-bottom: 10px;
+    
+}
+
+.placa2{
+    width: 100%;
+    height: 100px;
+    top: 100px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+
+} 
+
+
+/* pie de página */
+
+footer{
+    width: 100%;
+    height: 50px;
+	background-color: #ccafaf;
+	color: white;
+    text-align: center;
+    line-height: 50px;
+
+}
+
+/* configuración del formato del formulario */
+
+.formulario{
+        width: 80%;
+		margin: 50px auto;
+		padding: 15px;
+		border: 1px solid #900c3f;
+        background:  #900c3f;
+        color: white;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px; 
+    border: 1px solid #ccc;
+}
+
+.guardar, .cancelar {
+    font-family: 'MuseoModerno', cursive;  
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    border: none;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.guardar{
+    background-color: #4CAF50;
+}
+
+.guardar:hover{
+    background-color: #044906 ;
+}
+
+.cancelar {
+    background-color: #fc9d9d;
+  
+}
+
+.cancelar:hover{
+    background-color: #fd5959;
+}
