@@ -5,8 +5,8 @@
 }
 
 body {
-	
-    font-family: 'MuseoModerno', cursive;  
+
+    font-family: 'MuseoModerno', cursive;
     background-color: #ffcac2;
 }
 
@@ -21,7 +21,7 @@ header {
 	background-position: center center; /* centrada en coordenadas verticales y horizontales -- puedo desplazar right, left, button */
 	background-repeat: no-repeat;  /* no repite la imagen, por las dudas la imagen no llegue a cubrir el tamaño total del contenedor  */
 	background-attachment: fixed;  /*  el fondo queda fijo cuando hago el scroll de la página        */
-	
+
 
 }
 
@@ -32,15 +32,15 @@ header {
     top: 150px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    
-} 
+
+}
 
 
 .tituloPlaca{
     font-size: 42px;
     color: #fff;
     margin: 20px 0 auto;
-} 
+}
 
 
 
@@ -54,15 +54,24 @@ nav{
 	z-index: 1000; /* indica el orden de un elemento, cuando varios elementos se superponen */
 }
 
+nav ul { /* Added this rule */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px; /* Add some padding to the ul */
+  margin: 0; /* Ensure ul takes full width if not already */
+  list-style: none; /* Remove default list styling if not already done */
+}
+
 nav li{
-		
+
 		/*propiedad que permite que las viñetas se se mostren en linea y no una debajo de la otra */
-		display: inline-block;
+		/* display: inline-block; */ /* Replaced by flex on ul */
 		/*sacamos el punto que esta delante de cada items en la lista */
-		list-style: none;
+		list-style: none; /* Kept this for good measure */
 		/* le damos un relleno */
-		padding: 5px;
-	
+		padding: 0; /* Padding will be on a or button directly */
+
 
 }
 nav ul li a {
@@ -76,6 +85,41 @@ nav ul li:hover {
   background: #fc9d9d;
 }
 
+#theme-toggle-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ccc;
+  width: 50px;
+  height: 28px;
+  border-radius: 14px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+  border: none; /* Remove default border */
+  /* margin-right: 10px; Remove this, padding on ul handles spacing */
+}
+
+#theme-toggle-button::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s;
+}
+
+body.dark-mode #theme-toggle-button {
+  background-color: #007bff; /* Color for the switch track in dark mode */
+}
+
+body.dark-mode #theme-toggle-button::before {
+  transform: translateX(22px); /* Move the knob to the right */
+}
 
 /* sección principal */
 
@@ -101,7 +145,7 @@ p {
 /* configuración de una sección en medio de la página con una imagen de fondo */
 
 .medio{
-    
+
     width: 100%;
     height: 350px;
 	background-color: transparent;
@@ -112,7 +156,7 @@ p {
 	background-repeat: no-repeat;  /* no repite la imagen, por las dudas la imagen no llegue a cubrir el tamaño total del contenedor  */
     background-attachment: fixed;  /*  el fondo queda fijo cuando hago el scroll de la página        */
     margin-bottom: 10px;
-    
+
 }
 
 .placa2{
@@ -122,7 +166,7 @@ p {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
 
-} 
+}
 
 
 /* pie de página */
@@ -151,12 +195,12 @@ footer{
 input, textarea {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0px; 
+    margin: 8px 0px;
     border: 1px solid #ccc;
 }
 
 .guardar, .cancelar {
-    font-family: 'MuseoModerno', cursive;  
+    font-family: 'MuseoModerno', cursive;
     width: 100%;
     font-size: 16px;
     color: white;
@@ -177,7 +221,7 @@ input, textarea {
 
 .cancelar {
     background-color: #fc9d9d;
-  
+
 }
 
 .cancelar:hover{
